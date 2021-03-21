@@ -1,8 +1,10 @@
 import React, { FormEvent, useEffect } from "react";
 
+const apiUrl = process.env.REACT_APP_API_URL;
+
 export const LoginScreen = () => {
   const login = (user: { username: string; password: string }) => {
-    fetch(`http://localhost:3001/login`, {
+    fetch(`${apiUrl}/login`, {
       method: "POST",
       headers: { "Content-type": "application/json" },
       body: JSON.stringify(user),
